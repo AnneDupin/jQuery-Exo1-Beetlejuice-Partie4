@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="UTF-8">
+  <title>Exo1 - jQuery</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<!-- ALERTE REPLAY -->
+
+<div id="alert" class="animated jello">
+  <h4 class="alert-message"></h4>
+  <button class="btn">Replay</button>
+</div>
+
+<!-- DEBUT DU JEU -->
+
+<div class="wrapper">
+    <header class="text-center">
+      <h1>ShiFuMi vs Beetlejuice</h1>
+    </header>
+
+    <div class="container-fluid text-center">
+      <img src="../beetlejuice.jpg" alt="Beetlejuice">
+    </div>
+  
+
+     <div class="game">
+      <div id="game__view">
+        <h2 id="game__info" class="text-center">Joue 3 fois contre Beetlejuice !</h2>
+        <div id="game__match" class="row">
+          <div id="P1" class="col text-center">
+            <h4>Toi</h4>
+            <img class="game__P1 remove-svg animated jello" id="rock-P1" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140046/rock_wlknux.svg" alt="rock">
+            <img class="game__P1 remove-svg animated jello" id="paper-P1" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140045/paper_nw4a65.svg" alt="paper">
+            <img class="game__P1 remove-svg animated jello" id="scissors-P1" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140046/scissors_bx6sza.svg" alt="scissors">
+          </div>
+          <div id="IA" class="col text-center">
+            <h4>Beetlejuice</h4>
+            <img class="game__IA remove-svg animated jello" id="rock-IA" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140046/rock_wlknux.svg" alt="rock">
+            <img class="game__IA remove-svg animated jello" id="paper-IA" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140045/paper_nw4a65.svg" alt="paper">
+            <img class="game__IA remove-svg animated jello" id="scissors-IA" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140046/scissors_bx6sza.svg" alt="scissors">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game">
+      <div id="game__result" class="text-center">
+        <h3 id="result">FAIT TON CHOIX !</h3>
+        <div id="score" class="text-center">
+          <p>Egalité : <span id="equality">0</span></p>
+          <p>Victoire : <span id="win">0</span></p>
+          <p>Défaite : <span id="lose">0</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="game py-4">
+      <div id="game__choice">
+        <div id="P1-choice" class="row text-center">
+          <div id="rock-col" class="col">
+            <h6>PIERRE</h6>
+            <img class="game__svg" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140046/rock_wlknux.svg" alt="rock">
+          </div>
+          <div id="paper-col" class="col">
+            <h6>PAPIER</h6>
+            <img class="game__svg" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140045/paper_nw4a65.svg" alt="paper">
+          </div>
+          <div id="scissor-col" class="col">
+            <h6>CISEAUX</h6>
+            <img class="game__svg" src="http://res.cloudinary.com/dwlcc7kob/image/upload/v1516140046/scissors_bx6sza.svg" alt="scissors">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+</html>

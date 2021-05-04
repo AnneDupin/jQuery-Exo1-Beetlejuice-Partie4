@@ -1,0 +1,165 @@
+/* GENERALITES & Ressources */
+/* src/ signifie source , et est le Code brut avant la minification ou la concaténation ou une autre compilation-utilisée pour lire / éditer le code.
+
+dist/ signifie distribution , et est la version minified/concatenated - réellement utilisée sur les sites de production.
+
+C'est une tâche commune qui est faite pour les actifs sur le web pour les rendre plus petits. */
+
+/* Animate.css is a library of ready-to-use, cross-browser animations */
+
+/* Methodologie BEM pour le CSS */
+
+/* POLICE */
+
+
+body {
+  color: black;
+  font-family: 'Frijole', cursive;
+  background-color: whitesmoke;
+}
+
+/***
+Alert
+***/
+#alert {
+  z-index: 1;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  margin: 150px auto;
+  width: 260px;
+  height: 150px;
+  background-color: black;
+  border-radius: 4px;
+  text-align: center;
+  background-color: purple;
+}
+
+#alert h4 {
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+
+/***
+***/
+
+.game {
+  display: flex;
+  margin: auto;
+  max-width: 350px;
+}
+
+header h1 {
+  font-size: 80px;
+  margin-top: 30px;
+}
+
+.game__svg {
+  width: 50px;
+}
+
+.game__IA, .game__P1 {
+  display: none;
+  width: 70px;
+  margin: auto;
+}
+
+#game__info {
+  margin-top: 60px;
+}
+
+#game__match {
+  display: none;
+}
+
+
+/***
+Partie du jeu commence -> P1 vs IA
+Resultat du jeu -> Victoire ou défaite > Nouvelle Partie ?
+Choix du/de la joueur.euse > Pierre - Papier - Ciseaux
+***/
+
+#game__view {
+  width: 100%;
+  height: 150px;
+  margin-top: 5vh;
+  margin-bottom: 20px;
+  background-color: rgb(94, 28, 42);
+}
+
+#game__result {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  background-color: rgb(94, 28, 42);
+}
+
+#game__choice {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(94, 28, 42);
+}
+
+#game__choice, #game__result, #game__view {
+  border-radius: 4px;
+}
+
+/***
+Partie du jeu commence -> P1 vs IA
+***/
+#P1, #IA {
+  height: 150px;
+  padding-top: 5px;
+}
+
+#P1 {
+  border-right: solid 1px #fff;
+}
+
+/***
+Resultat du jeu -> Victoire ou défaite > Nouvelle Partie ?
+***/
+#result {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+#score p {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/***
+Choix du/de la joueur.euse > Pierre - Papier - Ciseaux
+***/
+#rock-col, #paper-col, #scissor-col {
+  cursor: pointer;
+  height: 100px;
+  padding-top: 5px;
+}
+
+#rock-col {
+  padding-right: 0px;
+}
+
+#paper-col {
+  padding: 5px 0px;
+  border-right: solid 1px #fff;
+  border-left: solid 1px #fff;
+}
+
+#scissor-col {
+  padding-left: 0px;
+}
