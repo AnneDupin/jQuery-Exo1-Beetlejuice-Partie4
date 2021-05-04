@@ -1,9 +1,9 @@
 $( document ).ready( function(){
   var player = ""; // Joueur.euse P1
   var computer = ""; // IA1
-  var win = 0; // Victoire
-  var lose = 0; // Defaite
-  var equality = 0; // == 
+  var victoire = 0; // Victoire
+  var defaite = 0; // Defaite
+  var egalite = 0; // == 
   var items = ["rock", "paper", "scissor"]; // Tableau : Pierre Papier Ciseaux
 
   gameView(); // PARTIE
@@ -25,17 +25,17 @@ $( document ).ready( function(){
 
     // Comparer AI et la valeur player > Si PIERRE est choisi
     if (player === "rock" && computer === "rock") { //si player = strictement égal à "pierre" et AI aussi
-      equality++; // Egalité 
-      document.getElementById("result").innerHTML = "Vous êtes à égalité avec Beetlejuice !";
-      document.getElementById("equality").innerHTML = equality;
+      egalite++; // egalite 
+      document.getElementById("result").innerHTML = "Vous êtes à egalite avec Beetlejuice !";
+      document.getElementById("egalite").innerHTML = egalite;
     } else if (player === "rock" && computer === "paper") {
-      lose++;
+      defaite++;
       document.getElementById("result").innerHTML = "Perdu !";
-      document.getElementById("lose").innerHTML = lose;
+      document.getElementById("defaite").innerHTML = defaite;
     } else if (player === "rock" && computer === "scissor") {
-      win++;
+      victoire++;
       document.getElementById("result").innerHTML = "Bravo !";
-      document.getElementById("win").innerHTML = win;
+      document.getElementById("victoire").innerHTML = victoire;
     } else {
       console.log("Not selected");
     }
@@ -48,24 +48,24 @@ $( document ).ready( function(){
     computer = items[Math.floor(Math.random()*items.length)];
     console.log(player, computer);
 
-    // Add svg
+    // AJOUTER .SVG
     $( '.remove-svg' ).css( 'display', 'none' );
     playerChoice();
     computerChoice();
 
   // Comparer AI et la valeur player > Si PAPIER est choisi
     if (player === "paper" && computer === "paper") {
-      equality++;
-      document.getElementById("result").innerHTML = "Vous êtes à égalité avec Beetlejuice !";
-      document.getElementById("equality").innerHTML = equality;
+      egalite++;
+      document.getElementById("result").innerHTML = "Vous êtes à egalite avec Beetlejuice !";
+      document.getElementById("egalite").innerHTML = egalite;
     } else if (player === "paper" && computer === "scissor") {
-      lose++;
+      defaite++;
       document.getElementById("result").innerHTML = "Perdu !";
-      document.getElementById("lose").innerHTML = lose;
+      document.getElementById("defaite").innerHTML = defaite;
     } else if (player === "paper" && computer === "rock") {
-      win++;
+      victoire++;
       document.getElementById("result").innerHTML = "Bravo !";
-      document.getElementById("win").innerHTML = win;
+      document.getElementById("victoire").innerHTML = victoire;
     } else {
       console.log("Not selected");
     }
@@ -78,30 +78,30 @@ $( document ).ready( function(){
     computer = items[Math.floor(Math.random()*items.length)];
     console.log(player, computer);
 
-    // Add svg
+    // AJOUTER .SVG
     $( '.remove-svg' ).css( 'display', 'none' );
     playerChoice();
     computerChoice();
 
   // Comparer AI et la valeur player > Si CISEAUX est choisi
     if (player === "scissor" && computer === "scissor") {
-      equality++;
-      document.getElementById("result").innerHTML = "Vous êtes à égalité avec Beetlejuice !";
-      document.getElementById("equality").innerHTML = equality;
+      egalite++;
+      document.getElementById("result").innerHTML = "Vous êtes à egalite avec Beetlejuice !";
+      document.getElementById("egalite").innerHTML = egalite;
     } else if (player === "scissor" && computer === "rock") {
-      lose++;
+      defaite++;
       document.getElementById("result").innerHTML = "Perdu !";
-      document.getElementById("lose").innerHTML = lose;
+      document.getElementById("defaite").innerHTML = defaite;
     } else if (player === "scissor" && computer === "paper") {
-      win++;
+      victoire++;
       document.getElementById("result").innerHTML = "Bravo !";
-      document.getElementById("win").innerHTML = win;
+      document.getElementById("victoire").innerHTML = victoire;
     } else {
       console.log("Not selected");
     }
   });
 
-  // Add the svg
+  // AJOUTER LE .SVG
   function computerChoice() {
     switch (computer) {
       case "rock":
@@ -116,7 +116,7 @@ $( document ).ready( function(){
     }
   }
 
-  // Hide the svg
+  // CACHER LE .SVG
   function playerChoice() {
     switch (player) {
       case "rock":
@@ -131,17 +131,17 @@ $( document ).ready( function(){
     }
   }
 
-  // Show a message if the player win or lose
+  // MESSAGE EN CAS DE VICTOIRE OU DE PERTE
   function score() {
     var message = document.querySelector('.alert-message');
     var body = document.querySelector('body');
-    if (win === 3) {
+    if (victoire === 3) {
       $( '#alert' ).css( 'display', 'block' );
       $('.game').css( 'display', 'none' );
       $('#score').css( 'display', 'none' );
       message.innerHTML = "Tu as gagné 3 fois ! Tu restes avec Lydia Deetz !";
       body.style.backgroundColor = "rgba(22,22,22, 0.4)";
-    } else if (lose === 3) {
+    } else if (defaite === 3) {
       $( '#alert' ).css( 'display', 'block' );
       $('.game').css( 'display', 'none' );
       $('#score').css( 'display', 'none' );
@@ -159,7 +159,7 @@ $( document ).ready( function(){
     });
   }
 
-  // reload for new game
+  // Charger une nouvelle partie
   $('.btn').click(function() {
     location.reload();
   });
